@@ -27,7 +27,9 @@ a) Imprime os números pares de 1 a 10.
 
 b) Imprime os números ímpares de 1 a 10.
 
-c) Imprime os números pares de 2 a 10.
+**c) Imprime os números pares de 2 a 10.**
+
+**C é a alternativa correta**
 
 d) Imprime os números ímpares de 2 a 10.
 
@@ -39,7 +41,9 @@ ______
 
 No lugar onde está escrito “// linha” qual das opções abaixo deve estar para funcionar corretamente o código?
 
-A) let carro = new Carro("Toyota");
+**A) let carro = new Carro("Toyota");**
+
+**A é a alternativa correta**
 
 B) let ligar = new ligar("Toyota");
 
@@ -55,7 +59,9 @@ ______
 
 Escolha a opção que responde corretamente:
 
-A) 18
+**A) 18**
+
+**A é a alternativa correta**
 
 B) 16
 
@@ -69,6 +75,8 @@ ______
 
 A) ![Uma imagem](assets/ex04_1.PNG)
 
+**A é a alternativa correta**
+
 B) ![Uma imagem](assets/ex04_2.PNG)
 
 C) ![Uma imagem](assets/ex04_3.PNG)
@@ -79,7 +87,9 @@ ______
 
 **5)** Qual a forma correta de definir uma classe Carro em JavaScript, com um método ligar() e um atributo marca?
 
-A) ![Uma imagem](assets/ex05_1.PNG)
+**A) ![Uma imagem](assets/ex05_1.PNG)**
+
+**A é a alternativa correta**
 
 B) ![Uma imagem](assets/ex05_2.PNG)
 
@@ -95,7 +105,9 @@ ______
 
 Qual será a saída do código acima?
 
-A) "Olá, meu nome é João. Olá, meu nome é Maria."
+**A) "Olá, meu nome é João. Olá, meu nome é Maria."**
+
+**A é a alternativa correta**
 
 B) "Olá, meu nome é ."
 
@@ -119,6 +131,34 @@ Criando e manipulando Animais:
 - Para cada animal, chame o método descrever() para ver a descrição no console.
 
 Dica: Utilize `console.log()` para exibir as informações!
+
+**Resolução:**
+
+```javascript
+
+class Animal {
+
+    // define os parâmetros da classe
+    constructor(nome, idade){
+        this.nome = nome; // this se refere ao objeto que está sendo criado
+        this.idade = idade;
+    }
+
+    // método para descrever o animal
+    descrever(){
+        console.log(`Nome do Animal: ${this.nome} \nIdade do Animal: ${this.idade}`);
+    }
+}
+
+// fornece valores para os parâmetros 
+const cachorro = new Animal ('Marley', 1);
+const gato = new Animal ('Garfield', 5);
+
+// chama o método de descrever
+cachorro.descrever();
+gato.descrever();
+
+```
 
 ______
 
@@ -145,6 +185,55 @@ Chamando os Métodos:
 
 Dica: Utilize console.log() para exibir as informações!
 
+**Resolução:**
+
+```javascript
+class Animal {
+
+    // define os parâmetros da classe
+    constructor(nome, idade) {
+
+        this.nome = nome; // this se refere ao objeto que está sendo criado
+        this.idade = idade;
+        
+    }
+
+    // método para descrever o animal
+    descrever() {
+
+        console.log(`Nome do Animal: ${this.nome} \nIdade do Animal: ${this.idade}`);
+
+    }
+
+}
+
+class Gato extends Animal {
+
+    constructor(nome, idade, cor) {
+        // chama o construtor da classe pai (Animal)
+        super(nome, idade);
+        this.cor = cor; // adiciona atributo de cor
+    }
+
+    descrever() {
+        super.descrever(); // chama o método descrever da classe pai (Animal)
+        console.log(`Cor do gato: ${this.cor}`);
+    }
+
+    miar() {
+        console.log('Som: Miauuuu'); // exibe o som do gato
+    }
+}
+
+// fornece valores para os parâmetros do gato e cachorro
+const cachorro = new Animal('Marley', 1);
+const gato = new Gato('Garfield', 5, 'Laranja');
+
+cachorro.descrever(); // chama o método de descrever o chachorro
+gato.descrever(); // chama o método de descrever o gato
+gato.miar(); // chama método de exibir som do gato
+
+```
 
 ______
 
@@ -167,6 +256,33 @@ Chamando o Método para Ver o Total:
 
 Dica: Utilize console.log() para exibir as informações!
 
+**Resolução:**
+
+```javascript
+class SomadorDeNotas {
+
+    constructor(){
+        // cada instância terá sua própria variável total que começará com 0
+        this.total = 0;
+    }
+
+    adicionarNota(nota){
+        // soma o parâmetro de nota ao total
+        this.total += nota;
+    }
+}
+
+var somador = new SomadorDeNotas();
+
+// adiciona somadores para compor o total
+somador.adicionarNota(6);
+somador.adicionarNota(7);
+somador.adicionarNota(9);
+
+// exbição do valor atual da propriedade 'total' do objeto 'somador'
+console.log(`O total é ${somador.total}`);
+
+```
 
 ______
 
